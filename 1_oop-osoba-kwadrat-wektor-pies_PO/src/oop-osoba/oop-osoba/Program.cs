@@ -50,7 +50,7 @@ namespace oop_osoba
 
             Console.WriteLine(osoba2_1.ImięNazwisko());
 
-            // program posiada odniesienie do klasy Osoba [ class Osoba ]:
+            // program posiada odniesienie do klasy Osoba [ class Osoba ]
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(2.2) Połączenie oraz wyświetlenie imion wraz z nazwiskami\n");
@@ -67,7 +67,7 @@ namespace oop_osoba
             Console.WriteLine(osoba1_2_2.ImięNazwisko());
             Console.WriteLine(osoba2_2_2.ImięNazwisko());
 
-            // program posiada odniesienie do klasy Osoba [ class Osoba ]:
+            // program posiada odniesienie do klasy Osoba [ class Osoba ]
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(3.1) Przeniesienia nazwiska z pierwszej osoby dla trzeciej\n");
@@ -85,7 +85,7 @@ namespace oop_osoba
             Console.WriteLine(osoba2_3_1.ImięNazwisko());
             Console.WriteLine(osoba3_3_1.ImięNazwisko());
 
-            // program posiada odniesienie do klasy OsobaB [ class OsobaB ]:
+            // program posiada odniesienie do klasy OsobaB [ class OsobaB ]
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(3.2) Wyświetlenie imienia oraz nazwiska [osobno i łącznie]\n");
@@ -96,7 +96,7 @@ namespace oop_osoba
             Console.WriteLine(osoba_3_2.Nazwisko);
             Console.WriteLine(osoba_3_2.ImięNazwisko);
 
-            // program posiada odniesienie do klasy OsobaC [ class OsobaC ]:
+            // program posiada odniesienie do klasy OsobaC [ class OsobaC ]
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(4.1) Zamiana imienia danej osoby innym imieniem [set]\n");
@@ -108,7 +108,7 @@ namespace oop_osoba
             Console.WriteLine(osoba_4_1.GetNazwisko());
             Console.WriteLine(osoba_4_1.GetImięNazwisko());
 
-            // program posiada odniesienie do klasy OsobaD [ class OsobaD ]:
+            // program posiada odniesienie do klasy OsobaD [ class OsobaD ]
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(4.2) Zamiana imienia danej osoby innym imieniem [drugi sposób]\n");
@@ -120,7 +120,7 @@ namespace oop_osoba
             Console.WriteLine(osoba_4_2.Nazwisko);
             Console.WriteLine(osoba_4_2.ImięNazwisko);
 
-            // program posiada odniesienie do klasy OsobaE [ class OsobaE ]:
+            // program posiada odniesienie do klasy OsobaE [ class OsobaE ]
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(4.3) Zamiana imienia danej osoby innym imieniem [drugi sposób, lekko zmieniony]\n");
@@ -132,7 +132,7 @@ namespace oop_osoba
             Console.WriteLine(osoba_4_3.Nazwisko);
             Console.WriteLine(osoba_4_3.ImięNazwisko);
 
-            // program posiada odniesienie do klasy OsobaF [ class OsobaF ]:
+            // program posiada odniesienie do klasy OsobaF [ class OsobaF ]
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(5.1) Inne operacje na imieniu oraz nazwisku [część 1-2]\n");
@@ -144,7 +144,7 @@ namespace oop_osoba
             Console.WriteLine(osoba_5_1.Nazwisko);
             Console.WriteLine($"Niniejsza osoba nazywa się {osoba_5_1.ImięNazwisko}.");
 
-            // program posiada odniesienie do klasy OsobaG [ class OsobaG ]:
+            // program posiada odniesienie do klasy OsobaG [ class OsobaG ]
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(5.2) Inne operacje na imieniu oraz nazwisku [część 2-2]\n");
@@ -156,7 +156,7 @@ namespace oop_osoba
             Console.WriteLine(osoba_5_2.Nazwisko);
             Console.WriteLine($"Niniejsza osoba nazywa się {osoba_5_2.ImięNazwisko}.");
 
-            // program posiada odniesienie do klasy OsobaG [ class OsobaG ]:
+            // program posiada odniesienie do klasy OsobaG [ class OsobaG ]
 
             //////////////////////////////////////////////////////////////////////
             //////////////////////////////////////////////////////////////////////
@@ -177,6 +177,25 @@ namespace oop_osoba
             MójTest(k3);
             MójTest(k4);
 
+            // program posiada odniesienie do klasy Koło [ class Koło ],
+            // jak i również do funkcji: static void MójTest(Koło k)
+
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n(7) Nasza klasa Koło zostało wzbogacone o dodatkowe dwie metody, czyli:\n" +
+                "public bool CzyWKole(double x, double y) oraz public bool CzyNaOkręgu(double x, double y).\n" +
+                "Pierwsza z naszych metod [ CzyWKole ] sprawdza, czy podany punkt jest kole\n" +
+                "zaś druga metoda sprawdza czy podany punkt jest na brzegu koła.\n");
+
+            Koło k = new Koło(promień: 2, środek: (1, 1));
+            DrugiMójTest(k, 1, 1);
+            DrugiMójTest(k, 1, 3);
+            DrugiMójTest(k, 1, 4);
+
+            // program posiada odniesienie do klasy Koło [ class Koło ],
+            // jak i również do funkcji: static void DrugiMójTest(Koło k, double px, double py)
+
+            //////////////////////////////////////////////////////////////////////
+
             Console.ReadKey();
         }
         static void MójTest(Koło k)
@@ -192,6 +211,16 @@ namespace oop_osoba
                 "Po zmianie promienia dwa razy koło ma obwód {0}, natomiast pole {1}",
                 k.Obwód_Koła,
                 k.Pole_Koła
+                );
+        }
+        static void DrugiMójTest(Koło k, double px, double py)
+        {
+            Console.WriteLine(
+                "Punkt ({0},{1}): czy jest w kole? {2} czy jest na okręgu? {3}",
+                px,
+                py,
+                k.CzyWKole(px, py),
+                k.CzyNaOkręgu(px, py)
                 );
         }
     }

@@ -8,7 +8,8 @@ namespace oop_osoba
 {
     class Koło
     {
-        public (double x, double y) Środek_Koła;
+        // dotyczy => klasa Koło [ class Koło ] jest częścią programów z punktu nr 6 oraz nr 7 [ class Program ... static void Main ]
+        public (double x, double y) Środek_Koła = (0,0);
         public double Promień_Koła;
         public double Obwód_Koła
         {
@@ -24,6 +25,26 @@ namespace oop_osoba
         {
             Promień_Koła = promień;
             Środek_Koła = środek;
+            // jest to nasz konstruktor
+        }
+        public bool CzyWKole(double x, double y)
+        {
+            double
+                dx = x - Środek_Koła.x,
+                dy = y - Środek_Koła.y,
+                odległość = Math.Sqrt(dx * dx + dy * dy)
+                ;
+            return odległość < Promień_Koła;
+        }
+        public bool CzyNaOkręgu(double x, double y)
+        {
+            double
+                dx = x - Środek_Koła.x,
+                dy = y - Środek_Koła.y,
+                odległość = Math.Sqrt(dx * dx + dy * dy)
+                ;
+            // return odległość == Promień; // dla próby
+            return odległość - Promień_Koła < double.Epsilon;
         }
     }
 }
