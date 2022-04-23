@@ -6,154 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_osoba
 {
-    class OsobaF
-    {
-        // dotyczy => klasa OsobaF [ class OsobaF ] jest częścią programu z punktu nr 4.3 [ class Program ... static void Main ]
-        string
-            imię,
-            nazwisko,
-            imięNazwisko;
-        public string Imię
-        {
-            get
-            {
-                return imię;
-            }
-            set
-            {
-                imię = value;
-                imięNazwisko = imię + " " + nazwisko;
-            }
-        }
-        public string Nazwisko
-        {
-            get { return nazwisko; }
-            set
-            {
-                nazwisko = value;
-                imięNazwisko = imię + " " + nazwisko;
-            }
-        }
-        public string ImięNazwisko
-        {
-            get { return imięNazwisko; }
-        }
-        public OsobaF(string imię, string nazwisko)
-        {
-            this.imię = imię;
-            this.nazwisko = nazwisko;
-            imięNazwisko = imię + " " + nazwisko;
-        }
-    }
-    class OsobaE
-    {
-        // dotyczy => klasa OsobaE [ class OsobaE ] jest częścią programu z punktu nr 4.2 [ class Program ... static void Main ]
-        string
-            imię,
-            nazwisko,
-            imięNazwisko;
-        public string Imię
-        {
-            get
-            {
-                return imię;
-            }
-            set
-            {
-                imię = value;
-            }
-        }
-        public string Nazwisko
-        {
-            get { return nazwisko; }
-            set { nazwisko = value; }
-        }
-        public string ImięNazwisko
-        {
-            get { return imię + " " + nazwisko; }
-        }
-        public OsobaE(string imię, string nazwisko)
-        {
-            this.imię = imię;
-            this.nazwisko = nazwisko;
-            imięNazwisko = imię + " " + nazwisko;
-        }
-    }
-    class OsobaD
-    {
-        // dotyczy => klasa OsobaD [ class OsobaD ] jest częścią programu z punktu nr 4.1 [ class Program ... static void Main ]
-        string
-            Imię,
-            Nazwisko,
-            ImięNazwisko;
-        public string GetImię()
-        {
-            return Imię;
-        }
-        public void SetImię(string nowe)
-        {
-            Imię = nowe;
-            ImięNazwisko = Imię + " " + Nazwisko;
-        }
-        public string GetNazwisko()
-        {
-            return Nazwisko;
-        }
-        public void SetNazwisko(string nowe)
-        {
-            Nazwisko = nowe;
-            ImięNazwisko = Imię + " " + Nazwisko;
-        }
-        public string GetImięNazwisko()
-        {
-            return ImięNazwisko;
-        }
-        public OsobaD(string imię, string nazwisko)
-        {
-            Imię = imię;
-            Nazwisko = nazwisko;
-            ImięNazwisko = imię + " " + nazwisko;
-        }
-    }
-    class OsobaC
-    {
-        // dotyczy => klasa OsobaC [ class OsobaC ] jest częścią programu z punktu nr 3.2 [ class Program ... static void Main ]
-        readonly public string
-            Imię,
-            Nazwisko,
-            ImięNazwisko;
-        public OsobaC(string imię, string nazwisko)
-        {
-            Imię = imię;
-            Nazwisko = nazwisko;
-            ImięNazwisko = imię + " " + nazwisko;
-        }
-    }
-    class OsobaB
-    {
-        // dotyczy => klasa OsobaB [ class OsobaB ] jest częścią programu z punktu nr 3.1 [ class Program ... static void Main ]
-        public string Imię, Nazwisko;
-        public string ImięNazwisko()
-        {
-            return Imię + " " + Nazwisko;
-        }
-        public OsobaB(string imię, string nazwisko)
-        {
-            Imię = imię;
-            Nazwisko = nazwisko;
-        }
-    }
-    class Osoba
-    {
-        // dotyczy => klasa Osoba [ class Osoba ] jest częścią programu z punktu nr 2.1 [ class Program ... static void Main ]
-        // dotyczy => klasa Osoba [ class Osoba ] jest częścią programu z punktu nr 2.2 [ class Program ... static void Main ]
-        public string Imię, Nazwisko;
-            
-        public string ImięNazwisko()
-        {
-            return Imię + " " + Nazwisko;
-        }
-    }
+    
     class Program
     {
         static string ImięNazwisko((string imię, string nazwisko) osoba)
@@ -282,8 +135,64 @@ namespace oop_osoba
             // program posiada odniesienie do klasy OsobaF [ class OsobaF ]:
 
             //////////////////////////////////////////////////////////////////////
-            
+            Console.WriteLine("\n(5.1) Inne operacje na imieniu oraz nazwisku [część 1-2]\n");
+
+            OsobaG osoba_5_1 = new OsobaG("Adam", "Mickiewicz");
+            osoba_5_1.ImięNazwisko = "Gilgamesz";
+
+            Console.WriteLine(osoba_5_1.Imię);
+            Console.WriteLine(osoba_5_1.Nazwisko);
+            Console.WriteLine($"Niniejsza osoba nazywa się {osoba_5_1.ImięNazwisko}.");
+
+            // program posiada odniesienie do klasy OsobaG [ class OsobaG ]:
+
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n(5.2) Inne operacje na imieniu oraz nazwisku [część 2-2]\n");
+
+            OsobaG osoba_5_2 = new OsobaG("Gilgamesz Maria Poniatowski");
+            osoba_5_2.Nazwisko = "Wiśniewski";
+
+            Console.WriteLine(osoba_5_2.Imię);
+            Console.WriteLine(osoba_5_2.Nazwisko);
+            Console.WriteLine($"Niniejsza osoba nazywa się {osoba_5_2.ImięNazwisko}.");
+
+            // program posiada odniesienie do klasy OsobaG [ class OsobaG ]:
+
+            //////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(6) Zdefiniowana klasa Koło (w tym środek, double promień,\n" +
+                "double obwód [do odczytu] oraz double pole [również do odczytu].\n" +
+                "Poniżej jest test działania dla 4 różnych pul o konkretnych danych\n");
+
+            Koło
+                k1 = new Koło(1, (0, 0)),
+                k2 = new Koło(promień: 1, środek: (1, 0)),
+                k3 = new Koło(środek: (0, 1), promień: 2),
+                k4 = new Koło(promień: 0.3, środek: (0, 0.5));
+
+            MójTest(k1);
+            MójTest(k2);
+            MójTest(k3);
+            MójTest(k4);
+
             Console.ReadKey();
+        }
+        static void MójTest(Koło k)
+        {
+            Console.WriteLine(
+                "Koło ma obwód {0}, zaś pole {1}\n",
+                k.Obwód_Koła,
+                k.Pole_Koła
+                );
+            k.Środek_Koła.x = 2;
+            k.Promień_Koła *= 2;
+            Console.WriteLine(
+                "Po zmianie promienia dwa razy koło ma obwód {0}, natomiast pole {1}",
+                k.Obwód_Koła,
+                k.Pole_Koła
+                );
         }
     }
 }
