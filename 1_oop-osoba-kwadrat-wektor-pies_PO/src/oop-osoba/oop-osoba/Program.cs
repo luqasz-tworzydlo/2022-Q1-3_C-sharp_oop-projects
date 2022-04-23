@@ -195,6 +195,74 @@ namespace oop_osoba
             // jak i również do funkcji: static void DrugiMójTest(Koło k, double px, double py)
 
             //////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(8.1) Różne operacje na zmiennych statycznych\n" +
+                "[opcja nr 1, podczas gdy chcemy zmienną statyczną modyfikować\n" +
+                "to mamy publiczną statyczną zmienną, czyli public static]\n");
+
+            OsobaH1
+                osoba8_1_1 = new OsobaH1("Adam Mickiewicz"),
+                osoba8_1_2 = new OsobaH1("Stefan Żeromski");
+
+            OsobaH1.JakaśZmienna = 1;
+
+            osoba8_1_1.JakaśMetoda();
+            osoba8_1_2.JakaśMetoda();
+
+            // program posiada odniesienie do klasy OsobaH1 [ class OsobaH1 ]
+
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n(8.2) Różne operacje na zmiennych statycznych\n" +
+                "[opcja nr 2, podczas gdy nie chcemy zmienną statyczną modyfikować\n" +
+                "i mieć ją dostępną na zewnątrz to mamy publiczną stałą lub readonly].\n" +
+                "Tutaj jest zablokowanie nadpisywanie nadanej już wartości.\n" +
+                "Od stałej różni to się tym, iż można to nadpisać w statycznym\n" +
+                "konstruktorze, jeśli będziemy mieć dostępną statyczną.\n" +
+                "Stałe nie mogą przechowywać obiektów [tj. int'owa tablica].\n");
+
+            OsobaH2
+                osoba8_2_1 = new OsobaH2("Adam Mickiewicz"),
+                osoba8_2_2 = new OsobaH2("Stefan Żeromski");
+
+            // OsobaI.Tablica = new int[3]; // zablokowanie nadpisywanie tablicy
+            OsobaH2.Tablica[0] = 3; // można modyfikować składowe tablicy
+
+            osoba8_2_1.JakaśMetoda();
+            osoba8_2_2.JakaśMetoda();
+
+            // program posiada odniesienie do klasy OsobaH2 [ class OsobaH2 ]
+
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n(8.3) Różne operacje na zmiennych statycznych\n" +
+                "[opcja nr 1, podczas gdy chcemy zmienną statyczną modyfikować\n" +
+                "to mamy publiczną statyczną zmienną, czyli public static]\n");
+
+            /*OsobaI
+                osoba8_3_1 = new OsobaI("Adam Mickiewicz")
+                {
+                    Kultura = "polska"
+                },
+                osoba8_3_2 = new OsobaI("Stefan Żeromski")
+                {
+                    Kultura = "Polska"
+                };*/
+
+            OsobaI
+                osoba8_3_1 = new OsobaI("Adam", "Mickiewicz", "polska"),
+                osoba8_3_2 = new OsobaI("Stefan", "Żeromski", "Polska");
+
+            Console.WriteLine(
+                $"Kulturą osoby {osoba8_3_1.ImięNazwisko} jest {osoba8_3_1.Kultura}");
+            Console.WriteLine(
+                $"Kulturą osoby {osoba8_3_2.ImięNazwisko} jest {osoba8_3_2.Kultura}");
+
+            // program posiada odniesienie do klasy OsobaI [ class OsobaI ]
+
+            //////////////////////////////////////////////////////////////////////
+
+
 
             Console.ReadKey();
         }
