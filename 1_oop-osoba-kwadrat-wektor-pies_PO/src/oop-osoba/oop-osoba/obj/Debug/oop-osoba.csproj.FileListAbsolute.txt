@@ -1,0 +1,7 @@
+C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\obj\Debug\oop-osoba.csproj.AssemblyReference.cache
+C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\obj\Debug\oop-osoba.csproj.CoreCompileInputs.cache
+C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\bin\Debug\oop-osoba.exe.config
+C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\bin\Debug\oop-osoba.exe
+C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\bin\Debug\oop-osoba.pdb
+C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\obj\Debug\oop-osoba.exe
+C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\obj\Debug\oop-osoba.pdb
