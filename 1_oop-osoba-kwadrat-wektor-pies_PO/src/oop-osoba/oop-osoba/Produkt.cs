@@ -50,6 +50,36 @@ namespace oop_osoba
                     cena_Netto = value;
             }
         }
+
+        ////////////////////////////////////////////////////////////////////////////
+        ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+        // /// /// /// /// !!! PONIŻSZA INSTRUKCJA DO POPRAWY !!! /// /// /// /// //
+        ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+        ////////////////////////////////////////////////////////////////////////////
+        /*string waluta_Kwoty = "polska";
+        readonly static Dictionary<string, string> DostępneWaluty = new Dictionary<string, string>()
+        {
+            ["polska"] = "PLN",
+            ["europejska"] = "EUR",
+            ["dolary_amerykańskie"] = "US"
+        };
+        public string Waluta_Kwoty
+        {
+            get { return waluta_Kwoty; }
+            set
+            {
+                string waluta = value;
+                if (DostępneWaluty.ContainsKey(waluta))
+                    waluta_Kwoty = waluta;
+                else
+                    throw new Exception(
+                        "Nieznana waluta: " + waluta);
+            }
+        }*/
+        ////////////////////////////////////////////////////////////////////////////
+        ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+        ////////////////////////////////////////////////////////////////////////////
+        
         public decimal Cena_Brutto
         {
             get

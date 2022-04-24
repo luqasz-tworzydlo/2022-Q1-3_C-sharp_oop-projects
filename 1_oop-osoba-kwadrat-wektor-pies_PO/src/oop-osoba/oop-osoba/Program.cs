@@ -373,6 +373,34 @@ namespace oop_osoba
                 "tj. Dictionary<string,decimal>, która przechowuje informacje o stawkach VAT\n" +
                 "[m.in. stawka podstawowa = 23%, stawki obniżone = 8% i stawkę zerową = 0%]\n");
 
+            TestowanieProduktów();
+
+            // program posiada odniesienie do klasy Produkt [ class Produkt ]
+
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(12) Operacje w wektorze dwuwymariowym\n" +
+                "[/// /// ///]\n");
+
+            TestWektora_2d();
+
+            // program posiada odniesienie do klasy Wektor_Dwuwymiarowy [ class Wektor_Dwuwymiarowy ]
+
+            //////////////////////////////////////////////////////////////////////
+
+            Console.ReadKey();
+        }
+        static void TestWektora_2d()
+        {
+            Wektor_Dwuwymiarowy
+                v = new Wektor_Dwuwymiarowy() { X = 1, Y = 2 };
+            v.Pomnóż(3);
+            Console.WriteLine(
+                $"v = ({v.X};{v.Y})");
+        }
+        static void TestowanieProduktów()
+        {
+
             Produkt
                 P1_1 = new Produkt()
                 {
@@ -425,7 +453,7 @@ namespace oop_osoba
                 P6_1 = new Produkt()
                 {
                     Nazwa = "Gra Cyberpunk",
-                    Cena_Netto =  1M
+                    Cena_Netto = 1M
                 };
 
             Console.WriteLine(P1_1.Cena_Brutto + " => cena brutto za " + P1_1.Nazwa);
@@ -437,14 +465,6 @@ namespace oop_osoba
             Console.WriteLine("=> " + P4_1.Cena_Brutto + " => koszt (cena brutto) za: " + P4_1.Nazwa);
             Console.WriteLine("=> W celu kupna " + P5_1.Nazwa + " należy zapłacić: " + P5_1.Cena_Brutto + "\n[ cena netto wynosi " + P5_1.Cena_Netto + " oraz stawka VAT " + P5_1.Kategoria_VAT + " ]");
             Console.WriteLine(P6_1.Cena_Brutto + " => cena brutto za " + P6_1.Nazwa);
-
-            // program posiada odniesienie do klasy Produkt [ class Produkt ]
-
-            //////////////////////////////////////////////////////////////////////
-
-            //////////////////////////////////////////////////////////////////////
-
-            Console.ReadKey();
         }
         ////////////////////////////////////////////////////////////////////////////
         ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
