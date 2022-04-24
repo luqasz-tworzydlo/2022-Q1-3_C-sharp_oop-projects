@@ -236,9 +236,8 @@ namespace oop_osoba
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(8.3) Różne operacje na zmiennych statycznych\n" +
-                "[opcja nr 1, podczas gdy chcemy zmienną statyczną modyfikować\n" +
-                "to mamy publiczną statyczną zmienną, czyli public static]\n");
-
+                "[wykorzystanie nowej kategorii Kultura i użycie alias'ów]\n");
+             
             /*OsobaI
                 osoba8_3_1 = new OsobaI("Adam Mickiewicz")
                 {
@@ -251,7 +250,7 @@ namespace oop_osoba
 
             OsobaI
                 osoba8_3_1 = new OsobaI("Adam", "Mickiewicz", "polska"),
-                osoba8_3_2 = new OsobaI("Stefan", "Żeromski", "Polska");
+                osoba8_3_2 = new OsobaI("Stefan", "Żeromski", "Pol"); // zmieniono tutaj Polska na Pol po wprowadzeniu listy alias'ów
 
             Console.WriteLine(
                 $"Kulturą osoby {osoba8_3_1.ImięNazwisko} jest {osoba8_3_1.Kultura}");
@@ -261,8 +260,57 @@ namespace oop_osoba
             // program posiada odniesienie do klasy OsobaI [ class OsobaI ]
 
             //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n(8.4) Różne operacje na zmiennych statycznych\n" +
+                "[wykorzystanie nowej kategorii Kultura i użycie alias'ów]\n" +
+                "[ dodawanie nowych kultur do istniejącej listy alias'ów ]\n" +
+                "[ usuwanie istniejących już kultur z listy alias'ów ]\n");
 
+            OsobaI
+                osoba8_4_1 = new OsobaI("Adam", "Mickiewicz", "polska"),
+                osoba8_4_2 = new OsobaI("Stefan", "Żeromski", "Pol");
 
+            // poniżej jest używa operacja dodania nowej kultury
+            OsobaI.Kultury.Add("sumeryjska", "sumeryjska");
+            OsobaI osoba8_4_3 = new OsobaI("Gilgamesz", "sumeryjska");
+
+            // poniżej jest użyta operacja usuwania już istniejącej kultury
+            // dla wcześniej wskazanych osób nie będzie to działać i obowiązywać [ nie będzie wyjątku ],
+            // jednak dla osób, które dopiero będą użyte z danym alias'em, który został wcześnikej usunięty będzie wyjątek
+            /*OsobaI.Kultury.Remove("pol");
+            OsobaI osoba8_4_4 = new OsobaI("Michał", "pol");
+            Console.WriteLine(
+                $"Kulturą osoby {osoba8_4_4.ImięNazwisko} jest {osoba8_4_4.Kultura}");*/
+
+            Console.WriteLine(
+                $"Kulturą osoby {osoba8_4_1.ImięNazwisko} jest {osoba8_4_1.Kultura}");
+            Console.WriteLine(
+                $"Kulturą osoby {osoba8_4_2.ImięNazwisko} jest {osoba8_4_2.Kultura}");
+            Console.WriteLine(
+                $"Kulturą osoby {osoba8_4_3.ImięNazwisko} jest {osoba8_4_3.Kultura}");
+
+            // program posiada odniesienie do klasy OsobaI [ class OsobaI ]
+
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n(8.5) Operacje na zmiennych statycznych\n" +
+                "[ z użyciem typu kolekcji statycznej - HashSet, który\n" +
+                "[ będzie informować, które nazwiska są pisane z przodu]\n" +
+                "[ można użyć tutaj także, przykładowo, switch'a,\n" +
+                "który jest w praktyce łatwiej używalny]\n");
+
+            OsobaJ
+                osoba8_5_1 = new OsobaJ("Adam", "Mickiewicz", "polska"),
+                osoba8_5_2 = new OsobaJ("Oda", "Nobunaga", "jap");
+
+            Console.WriteLine(
+                $"=> Kulturą osoby {osoba8_5_1.ImięNazwisko} jest {osoba8_5_1.Kultura}\n" +
+                $"Jego imię to {osoba8_5_1.Imię}, a nazwisko to {osoba8_5_1.Nazwisko}\n");
+            Console.WriteLine(
+                $"=> Kulturą osoby {osoba8_5_2.ImięNazwisko} jest {osoba8_5_2.Kultura}\n" +
+                $"Jej imię to {osoba8_5_2.Imię}, a nazwisko to {osoba8_5_2.Nazwisko}\n");
+
+            // program posiada odniesienie do klasy OsobaJ [ class OsobaJ ]
+
+            //////////////////////////////////////////////////////////////////////
 
             Console.ReadKey();
         }
