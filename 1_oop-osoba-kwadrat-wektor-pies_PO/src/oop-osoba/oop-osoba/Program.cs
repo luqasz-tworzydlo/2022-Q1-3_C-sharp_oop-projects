@@ -311,9 +311,161 @@ namespace oop_osoba
             // program posiada odniesienie do klasy OsobaJ [ class OsobaJ ]
 
             //////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(9) Testowanie działania klasy Koło,\n" +
+                "wraz z dwoma funkcjami [ użyto dane z punktów 6 i 7 ]\n");
+
+            Koło
+                k9_1 = new Koło(1, (0, 0)),
+                k9_2 = new Koło(promień: 1, środek: (1, 0)),
+                k9_3 = new Koło(środek: (0, 1), promień: 2),
+                k9_4 = new Koło(promień: 0.3, środek: (0, 0.5));
+
+            MójTest(k9_1);
+            MójTest(k9_2);
+            MójTest(k9_3);
+            MójTest(k9_4);
+
+            Console.WriteLine("\n");
+
+            Koło k9 = new Koło(promień: 2, środek: (1, 1));
+            DrugiMójTest(k9, 1, 1);
+            DrugiMójTest(k9, 1, 3);
+            DrugiMójTest(k9, 1, 4);
+
+            // program posiada odniesienie do klasy Koło [ class Koło ],
+            // jak i również do poniższych funkcji:
+            // => static void MójTest(Koło k)
+            // => static void DrugiMójTest(Koło k, double px, double py)
+
+            //////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+
+            ////////////////////////////////////////////////////////////////////////////
+            ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+            // /// /// /// !!! PONIŻSZA POZYCJA NR 10 JEST DO POPRAWY !!! /// /// /// //
+            ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+            ////////////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n(10) Operacje na klasie Kwadrat\n" +
+                "[odczyt oraz zapis konkretnych danych]\n");
+            /*Kwadrat
+                k10_1 = new Kwadrat(bok1: 1, 0, 0, 0),
+                k10_2 = new Kwadrat(0, przekątna1: 2, 0, 0),
+                k10_3 = new Kwadrat(0, 0, obwód1: 5, 0),
+                k10_4 = new Kwadrat(0, 0, 0, pole1: 8);
+
+            TestKwadratu(k10_1);
+            TestKwadratu(k10_2);
+            TestKwadratu(k10_3);
+            TestKwadratu(k10_4);*/
+
+            // program posiada odniesienie do klasy Kwadrat [ class Kwadrat ]
+
+            ////////////////////////////////////////////////////////////////////////////
+            ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+            ////////////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(11) Operacje na klasie Produkt z użyciem statycznej kolekcji,\n" +
+                "tj. Dictionary<string,decimal>, która przechowuje informacje o stawkach VAT\n" +
+                "[m.in. stawka podstawowa = 23%, stawki obniżone = 8% i stawkę zerową = 0%]\n");
+
+            Produkt
+                P1_1 = new Produkt()
+                {
+                    Nazwa = "Jabłko",
+                    Cena_Netto = 1M,
+                    Kategoria_VAT = "rolne"
+                },
+                P1_2 = new Produkt()
+                {
+                    Nazwa = "Jabłka Premium",
+                    Cena_Netto = 3M,
+                    Kategoria_VAT = "rolne"
+                },
+                P2_1 = new Produkt()
+                {
+                    Nazwa = "Usługa parkieciarska [podstawowa]",
+                    Cena_Netto = 1M,
+                    Kategoria_VAT = "budowlana"
+                },
+                P2_2 = new Produkt()
+                {
+                    Nazwa = "Usługa parkieciarska [profesjonalna]",
+                    Cena_Netto = 90M,
+                    Kategoria_VAT = "budowlana"
+                },
+                P3_1 = new Produkt()
+                {
+                    Nazwa = "Mąka",
+                    Cena_Netto = 1M,
+                    Kategoria_VAT = "gastro"
+                },
+                P3_2 = new Produkt()
+                {
+                    Nazwa = "Limonka Premium",
+                    Cena_Netto = 5M,
+                    Kategoria_VAT = "gastro"
+                },
+                P4_1 = new Produkt()
+                {
+                    Nazwa = "Chleb tradycyjny",
+                    Cena_Netto = 1M,
+                    Kategoria_VAT = "spożywcze"
+                },
+                P5_1 = new Produkt()
+                {
+                    Nazwa = "Książka kucharska",
+                    Cena_Netto = 1M,
+                    Kategoria_VAT = "książki"
+                },
+                P6_1 = new Produkt()
+                {
+                    Nazwa = "Gra Cyberpunk",
+                    Cena_Netto =  1M
+                };
+
+            Console.WriteLine(P1_1.Cena_Brutto + " => cena brutto za " + P1_1.Nazwa);
+            Console.WriteLine("=> Cena brutto za " + P1_2.Nazwa + " wynosi: " + P1_2.Cena_Brutto);
+            Console.WriteLine("=> " + P2_1.Nazwa + " => koszt (cena brutto):" + P2_1.Cena_Brutto);
+            Console.WriteLine("=> " + P2_2.Nazwa + " => koszt (cena brutto): " + P2_2.Cena_Brutto);
+            Console.WriteLine(P3_1.Cena_Brutto + " => cena brutto za " + P3_1.Nazwa);
+            Console.WriteLine("=> Cena brutto za " + P3_2.Nazwa + " wynosi: " + P1_2.Cena_Brutto);
+            Console.WriteLine("=> " + P4_1.Cena_Brutto + " => koszt (cena brutto) za: " + P4_1.Nazwa);
+            Console.WriteLine("=> W celu kupna " + P5_1.Nazwa + " należy zapłacić: " + P5_1.Cena_Brutto + "\n[ cena netto wynosi " + P5_1.Cena_Netto + " oraz stawka VAT " + P5_1.Kategoria_VAT + " ]");
+            Console.WriteLine(P6_1.Cena_Brutto + " => cena brutto za " + P6_1.Nazwa);
+
+            // program posiada odniesienie do klasy Produkt [ class Produkt ]
+
+            //////////////////////////////////////////////////////////////////////
+
+            //////////////////////////////////////////////////////////////////////
 
             Console.ReadKey();
         }
+        ////////////////////////////////////////////////////////////////////////////
+        ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+        // /// /// /// /// !!! PONIŻSZA INSTRUKCJA DO POPRAWY !!! /// /// /// /// //
+        ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+        ////////////////////////////////////////////////////////////////////////////
+        /*static void TestKwadratu(Kwadrat k)
+        {
+            Console.WriteLine(
+                "Nasz kwadrat ma bok {0}, w tym:\n" +
+                "=> przekątna: {1}\n" +
+                "=> obwód {2}\n" +
+                "=> pole {3}\n" +
+                k,
+                k.Przekątna,
+                k.Obwód,
+                k.Pole);
+        }*/
+        ////////////////////////////////////////////////////////////////////////////
+        ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
+        ////////////////////////////////////////////////////////////////////////////
         static void MójTest(Koło k)
         {
             Console.WriteLine(

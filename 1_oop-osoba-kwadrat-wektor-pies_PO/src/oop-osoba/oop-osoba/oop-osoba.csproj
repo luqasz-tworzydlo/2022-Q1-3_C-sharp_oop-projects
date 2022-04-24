@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Koło.cs" />
+    <Compile Include="Kwadrat.cs" />
     <Compile Include="Osoba.cs" />
+    <Compile Include="Produkt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
