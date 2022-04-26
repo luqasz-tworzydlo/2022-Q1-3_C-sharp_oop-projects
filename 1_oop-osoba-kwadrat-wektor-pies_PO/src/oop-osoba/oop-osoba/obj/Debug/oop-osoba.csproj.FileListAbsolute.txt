@@ -5,3 +5,10 @@ C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\bin\Debug\oop-osoba
 C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\bin\Debug\oop-osoba.pdb
 C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\obj\Debug\oop-osoba.exe
 C:\Users\Łukasz Tworzydło\source\repos\oop-osoba\oop-osoba\obj\Debug\oop-osoba.pdb
+D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\1.1_oop-osoba_PO\src\2022-03-24 (3)\oop-osoba\oop-osoba\bin\Debug\oop-osoba.exe.config
+D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\1.1_oop-osoba_PO\src\2022-03-24 (3)\oop-osoba\oop-osoba\bin\Debug\oop-osoba.exe
+D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\1.1_oop-osoba_PO\src\2022-03-24 (3)\oop-osoba\oop-osoba\bin\Debug\oop-osoba.pdb
+D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\1.1_oop-osoba_PO\src\2022-03-24 (3)\oop-osoba\oop-osoba\obj\Debug\oop-osoba.csproj.AssemblyReference.cache
+D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\1.1_oop-osoba_PO\src\2022-03-24 (3)\oop-osoba\oop-osoba\obj\Debug\oop-osoba.csproj.CoreCompileInputs.cache
+D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\1.1_oop-osoba_PO\src\2022-03-24 (3)\oop-osoba\oop-osoba\obj\Debug\oop-osoba.exe
+D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\1.1_oop-osoba_PO\src\2022-03-24 (3)\oop-osoba\oop-osoba\obj\Debug\oop-osoba.pdb

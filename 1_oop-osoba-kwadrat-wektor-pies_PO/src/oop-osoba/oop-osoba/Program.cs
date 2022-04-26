@@ -394,7 +394,10 @@ namespace oop_osoba
         {
             Wektor_Dwuwymiarowy
                 v = new Wektor_Dwuwymiarowy() { X = 1, Y = 2 },
-                w = new Wektor_Dwuwymiarowy() { X = 0, Y = 1 };
+                w = new Wektor_Dwuwymiarowy() { X = 0, Y = 1 },
+                // wyprodukowanie nowego wektora, jednocześnie zachowując poprzednie instancje
+                vpw = Wektor_Dwuwymiarowy.DodajWektor(v, w);
+
 
             /*Wektor_Dwuwymiarowy
                 v = new Wektor_Dwuwymiarowy() { X = 1, Y = 2 };
@@ -402,10 +405,15 @@ namespace oop_osoba
             Console.WriteLine(
                 $"v = ({v.X};{v.Y})");*/
 
+            // poniższa instrukcja dodaje wektor v do wektora w
+            /*v.DodajWektor(w);*/ // dodanie do wektora v wektora w
+
             Console.WriteLine(
-                $"v = ({v.X};{v.Y}); |w| = {v.Długość}");
+                $"v = ({v.X};{v.Y}); |w| = {v.DługośćWektora}");
             Console.WriteLine(
-                $"w = ({w.X};{w.Y}); |w| = {w.Długość}");
+                $"w = ({w.X};{w.Y}); |w| = {w.DługośćWektora}");
+            Console.WriteLine(
+                $"v+w = ({vpw.X};{vpw.Y}); |v+w| = {vpw.DługośćWektora}");
             /*Console.WriteLine(
                 $"<v,w> = {v.IloczynSklarany(w)}");*/
             Console.WriteLine(
