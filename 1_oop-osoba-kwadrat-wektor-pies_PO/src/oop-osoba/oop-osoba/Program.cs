@@ -379,8 +379,8 @@ namespace oop_osoba
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
-            Console.WriteLine("\n(12) Operacje w wektorze dwuwymariowym\n" +
-                "[/// /// ///]\n");
+            Console.WriteLine("\n(12) Operacje na wektorach dwuwymariowych\n" +
+                "[dodawanie dwóch wektorów, wyświetlanie ich długości itd.]\n");
 
             TestWektora_2d();
 
@@ -396,7 +396,8 @@ namespace oop_osoba
                 v = new Wektor_Dwuwymiarowy() { X = 1, Y = 2 },
                 w = new Wektor_Dwuwymiarowy() { X = 0, Y = 1 },
                 // wyprodukowanie nowego wektora, jednocześnie zachowując poprzednie instancje
-                vpw = Wektor_Dwuwymiarowy.DodajWektor(v, w);
+                /*vpw = Wektor_Dwuwymiarowy.DodajWektor(v, w);*/
+                vpw = Wektor_Dwuwymiarowy.Suma_Wektorów(v, w);
 
 
             /*Wektor_Dwuwymiarowy
@@ -407,6 +408,7 @@ namespace oop_osoba
 
             // poniższa instrukcja dodaje wektor v do wektora w
             /*v.DodajWektor(w);*/ // dodanie do wektora v wektora w
+            v.DodajWektor(w).DodajWektor(w); // łańcuchowe wywoływanie metody
 
             Console.WriteLine(
                 $"v = ({v.X};{v.Y}); |w| = {v.DługośćWektora}");
