@@ -393,10 +393,23 @@ namespace oop_osoba
         static void TestWektora_2d()
         {
             Wektor_Dwuwymiarowy
+                v = new Wektor_Dwuwymiarowy() { X = 1, Y = 2 },
+                w = new Wektor_Dwuwymiarowy() { X = 0, Y = 1 };
+
+            /*Wektor_Dwuwymiarowy
                 v = new Wektor_Dwuwymiarowy() { X = 1, Y = 2 };
             v.Pomnóż(3);
             Console.WriteLine(
-                $"v = ({v.X};{v.Y})");
+                $"v = ({v.X};{v.Y})");*/
+
+            Console.WriteLine(
+                $"v = ({v.X};{v.Y}); |w| = {v.Długość}");
+            Console.WriteLine(
+                $"w = ({w.X};{w.Y}); |w| = {w.Długość}");
+            /*Console.WriteLine(
+                $"<v,w> = {v.IloczynSklarany(w)}");*/
+            Console.WriteLine(
+                $"<v,w> = {Wektor_Dwuwymiarowy.IloczynSkalarny(v,w)}");
         }
         static void TestowanieProduktów()
         {

@@ -16,5 +16,21 @@ namespace oop_osoba
             X *= c;
             Y *= c;
         }
+        /*public double IloczynSklarany(Wektor_Dwuwymiarowy that)
+        {
+            return this.X * that.X + this.Y * that.Y;
+        }*/
+        static public double IloczynSkalarny(Wektor_Dwuwymiarowy v, Wektor_Dwuwymiarowy w)
+        {
+            return v.X * w.X + v.Y * w.Y;
+        }
+        public double Długość
+        {
+            get { return Math.Sqrt(IloczynSkalarny(this, this)); }
+        }
+        /*public double Długość
+        {
+            get { return Math.Sqrt(X * X + Y * Y); }
+        }*/
     }
 }
