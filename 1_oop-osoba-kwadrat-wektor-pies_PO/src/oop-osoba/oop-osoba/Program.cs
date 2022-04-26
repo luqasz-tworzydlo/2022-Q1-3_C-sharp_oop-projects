@@ -364,6 +364,8 @@ namespace oop_osoba
             TestKwadratu(k10_4);*/
 
             // program posiada odniesienie do klasy Kwadrat [ class Kwadrat ]
+            // jak i również do poniższej funkcji:
+            // => static void TestKwadratu(Kwadrat k)
 
             ////////////////////////////////////////////////////////////////////////////
             ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
@@ -376,6 +378,8 @@ namespace oop_osoba
             TestowanieProduktów();
 
             // program posiada odniesienie do klasy Produkt [ class Produkt ]
+            // jak i również do poniższej funkcji:
+            // => static void TestowanieProduktów()
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
@@ -385,10 +389,33 @@ namespace oop_osoba
             TestWektora_2d();
 
             // program posiada odniesienie do klasy Wektor_Dwuwymiarowy [ class Wektor_Dwuwymiarowy ]
+            // jak i również do poniższej funkcji:
+            // => static void TestWektora_2d()
+
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(13) Operacje na punktach wielowymariowych\n" +
+                "[dodawanie dwóch wektorów, wyświetlanie ich długości itd.]\n");
+
+            TestPunku_Wielowymiarowego();
+
+            // program posiada odniesienie do klasy Punkt_Wielowymiarowy [ class Punkt_Wielowymiarowy ]
+            // jak i również do poniższej funkcji:
+            // => static void TestPunku_Wielowymiarowego()
 
             //////////////////////////////////////////////////////////////////////
 
             Console.ReadKey();
+        }
+        static void TestPunku_Wielowymiarowego()
+        {
+            // testowanie klasy Punkt_Wielowymiarowy
+            double[] tab = { 1.5, 2 };
+            Punkt_Wielowymiarowy
+                p = new Punkt_Wielowymiarowy(tab);
+            tab[0] = 0;
+            Console.WriteLine("Nasz punkt to: ");
+            Console.WriteLine(p.Format_Punktu);
         }
         static void TestWektora_2d()
         {

@@ -8,6 +8,8 @@ namespace oop_osoba
 {
     class Wektor_Dwuwymiarowy
     {
+        // dotyczy => klasa Wektor_Dwuwymiarowy [ class Wektor_Dwuwymiarowy ] jest częścią programu z punktu nr 12 [ class Program ... static void Main ]
+
         public double
             X = 0,
             Y = 0;
