@@ -404,8 +404,35 @@ namespace oop_osoba
             // => static void TestPunku_Wielowymiarowego()
 
             //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(14) Operacje na klasie Wektor_Stereo\n");
+
+            Test_Wektora_Stereo();
+
+            // program posiada odniesienie do klasy Wektor_Stereo [ class Wektor_Stereo ]
+            // jak i również do poniższej funkcji:
+            // => static void Test_Wektora_Stereo()
+
+            //////////////////////////////////////////////////////////////////////
 
             Console.ReadKey();
+        }
+        static void Test_Wektora_Stereo()
+        {
+            Wektor_Stereo
+                v = new Wektor_Stereo(1, 2, 3),
+                w = new Wektor_Stereo(6, -5, 4),
+                s = Wektor_Stereo.Suma(v, w);
+
+            Console.WriteLine(
+                $"v = ({v.X};{v.Y};{v.Z}); |v| = {v.Długość}");
+            Console.WriteLine(
+                $"w = ({w.X};{w.Y};{w.Z}); |w| = {w.Długość}");
+            Console.WriteLine(
+                $"<v,w> = ({Wektor_Stereo.IloczynSkalarny(v,w)})");
+
+            Console.WriteLine(
+                $"w = ({s.X};{s.Y};{s.Z}); |s| = {s.Długość}");
         }
         static void TestPunku_Wielowymiarowego()
         {
