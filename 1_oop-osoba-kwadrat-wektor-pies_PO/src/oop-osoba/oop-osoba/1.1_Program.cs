@@ -414,8 +414,38 @@ namespace oop_osoba
             // => static void Test_Wektora_Stereo()
 
             //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(15) Operacje na klasie Wektor_Ogólny\n");
+
+            Test_Wektora_Ogólnego();
+
+            // program posiada odniesienie do klasy Wektor_Ogólny [ class Wektor_Ogólny ]
+            // jak i również do poniższej funkcji:
+            // => static void Test_Wektora_Ogólnego()
+
+            //////////////////////////////////////////////////////////////////////
 
             Console.ReadKey();
+        }
+        static void Test_Wektora_Ogólnego()
+        {
+            Wektor_Ogólny
+                v = new Wektor_Ogólny(1, 2),
+                w = new Wektor_Ogólny(3, 4),
+                ss = Wektor_Ogólny.Suma(v,w);
+
+            Console.WriteLine("Iloczyn skalarny dla dwóch wektorów, czyli:\n" +
+                "v o wymiarze (" + v.Wymiar + ") oraz dla w o wymiarze (" + w.Wymiar + ") wynosi: ");
+            Console.WriteLine(
+                $"v = {Wektor_Ogólny.IloczynSkalarny(v,w)}");
+
+            Console.WriteLine("Po dodaniu dwóch wektorów ich rozmiar wygląda następująco: \n" +
+                $"|ss| = {ss.Długość}");
+
+            Console.WriteLine("Natomiast iloczyn dla ss (czyli sumy dwóch wektorów v i w) oraz wektora w wynosi: ");
+            Console.WriteLine(
+                $"w = {Wektor_Ogólny.IloczynSkalarny(ss,w)};");
+
         }
         static void Test_Wektora_Stereo()
         {

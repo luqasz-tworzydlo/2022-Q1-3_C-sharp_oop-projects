@@ -52,6 +52,7 @@
     <Compile Include="3.2_Punkt_Wielowymiarowy.cs" />
     <Compile Include="3.1_Wektor_Dwuwymiarowy.cs" />
     <Compile Include="3.3_Wektor_Stereo.cs" />
+    <Compile Include="3.4_Wektor_Ogólny.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
