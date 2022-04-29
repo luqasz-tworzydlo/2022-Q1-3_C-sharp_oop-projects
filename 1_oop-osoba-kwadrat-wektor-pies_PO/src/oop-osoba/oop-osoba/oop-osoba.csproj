@@ -48,11 +48,13 @@
     <Compile Include="1.2_Osoba.cs" />
     <Compile Include="2.2_Produkt.cs" />
     <Compile Include="1.1_Program.cs" />
+    <Compile Include="4.1_Pies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="3.2_Punkt_Wielowymiarowy.cs" />
     <Compile Include="3.1_Wektor_Dwuwymiarowy.cs" />
     <Compile Include="3.3_Wektor_Stereo.cs" />
     <Compile Include="3.4_Wektor_Ogólny.cs" />
+    <Compile Include="4.2_Zwierzę.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

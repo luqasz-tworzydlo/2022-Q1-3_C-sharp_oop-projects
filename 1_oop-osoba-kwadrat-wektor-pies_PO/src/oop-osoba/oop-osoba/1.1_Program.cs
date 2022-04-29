@@ -423,9 +423,47 @@ namespace oop_osoba
             // jak i również do poniższej funkcji:
             // => static void Test_Wektora_Ogólnego()
 
-            //////////////////////////////////////////////////////////////////////
 
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(16) Dziedziczenie (zwierzątka) => operacje z użyciem dwóch klas\n");
+
+            TestDziedziczenia_Zwierzę();
+
+            // program posiada odniesienie do klasy Wektor_Ogólny [ class Wektor_Ogólny ]
+            // jak i również do poniższej funkcji:
+            // => static void Test_Wektora_Ogólnego()
+
+            //////////////////////////////////////////////////////////////////////
             Console.ReadKey();
+        }
+        static void TestDziedziczenia_Zwierzę()
+        {
+            Zwierzę
+                z = new Zwierzę()
+                {
+                    Gatunek = "koń",
+                    Imię = "Pikuś",
+                    Wiek = 6
+                };
+            Pies
+                p = new Pies()
+                {
+                    Imię = "Myszka",
+                    Wiek = 15,
+                    Gatunek = "pies",
+                    Rasa = "jamnik-kundelek"
+                };
+
+            Console.WriteLine("=> Pierwsze zwierzątko");
+            Console.WriteLine(
+                $"{p.Rasa} {p.Imię}, {p.Wiek} lat(a)");
+            Console.WriteLine(
+                $"{p.Gatunek} {p.Rasa} {p.Imię}, {p.Wiek} lat(a)");
+
+            Console.WriteLine("=> Drugie zwierzątko:");
+            Console.WriteLine(
+                $"{z.Gatunek} {z.Imię}, {z.Wiek} lat(a)");
         }
         static void Test_Wektora_Ogólnego()
         {
