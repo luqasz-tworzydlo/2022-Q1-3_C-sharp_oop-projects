@@ -430,9 +430,11 @@ namespace oop_osoba
 
             TestDziedziczenia_Zwierzę();
 
-            // program posiada odniesienie do klasy Wektor_Ogólny [ class Wektor_Ogólny ]
+            // program posiada odniesienie do następujących klas:
+            // => klasy Pies z dziedziczeniem klasy Zwierzę [ class Pies : Zwierzę ]
+            // => klasy Zwierzę [ class Zwierzę ]
             // jak i również do poniższej funkcji:
-            // => static void Test_Wektora_Ogólnego()
+            // => static void TestDziedziczenia_Zwierzę()
 
             //////////////////////////////////////////////////////////////////////
             Console.ReadKey();
@@ -451,15 +453,20 @@ namespace oop_osoba
                 {
                     Imię = "Myszka",
                     Wiek = 15,
-                    Gatunek = "pies",
                     Rasa = "jamnik-kundelek"
                 };
+            Zwierzę z2 = p;
+            // p.Gatunek = "kot"; // zmiana gatunku na nową wersję (brak możliwości)
+            z2.Gatunek = "kot"; // tutaj (w klasie zwierzę) można już zmienić gatunek
+
 
             Console.WriteLine("=> Pierwsze zwierzątko");
             Console.WriteLine(
                 $"{p.Rasa} {p.Imię}, {p.Wiek} lat(a)");
             Console.WriteLine(
                 $"{p.Gatunek} {p.Rasa} {p.Imię}, {p.Wiek} lat(a)");
+            Console.WriteLine(
+                $"{z2.Gatunek} {z2.Imię}, {z2.Wiek} lat(a)"); // niedozwolone użycie {z2.Rasa}
 
             Console.WriteLine("=> Drugie zwierzątko:");
             Console.WriteLine(
