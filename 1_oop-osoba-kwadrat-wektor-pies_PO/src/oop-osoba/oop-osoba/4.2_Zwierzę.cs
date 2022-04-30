@@ -10,6 +10,20 @@ namespace oop_osoba
     {
         // dotyczy => klasa Zwierzę [ class Zwierzę ] jest częścią programu z punktu nr 16 [ class Program ... static void Main ]
 
+        public Zwierzę para;
+        public Zwierzę Para
+        {
+            get => para;
+            set
+            {
+                if (para != null)      // => niniejsza instrukcja
+                    para.para = null;  // daje nam referencję zwrotną [1-2]
+                para = value;
+                if (para != null)      // => niniejsza instrukcja
+                    para.para = this;  // daje nam referencję zwrotną [2-2]
+            }
+        }
+
         public byte Wiek;
         public string
             Imię;

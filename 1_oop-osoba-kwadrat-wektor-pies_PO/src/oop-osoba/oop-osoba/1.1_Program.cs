@@ -437,7 +437,58 @@ namespace oop_osoba
             // => static void TestDziedziczenia_Zwierzę()
 
             //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
+            Console.WriteLine("\n(17) Dziedziczenie (zwierzątka i ludzie) => operacje z użyciem czterech klas\n");
+
+            ĆwiczenieDziedziczenie();
+
+            Console.WriteLine("");
+
+            TestReferencje();
+
+            // program posiada odniesienie do następujących klas:
+            // => klasy Pies z dziedziczeniem klasy Zwierzę [ class Pies : Zwierzę ]
+            // => klasy Zwierzę [ class Zwierzę ]
+            // jak i również do poniższej funkcji:
+            // => static void TestDziedziczenia_Zwierzę()
+
+            //////////////////////////////////////////////////////////////////////
             Console.ReadKey();
+        }
+        static void TestReferencje()
+        {
+            Zwierzę
+                z1 = new Zwierzę("Timon", "surykatka", 17),
+                z2 = new Zwierzę("Pumba", "guziec", 18)
+                ;
+
+            z1.Para = z2;
+            // z2.Para = z1;
+
+            Console.WriteLine(
+                $"{z1.Para} jest parą {z1}"
+                );
+            Console.WriteLine(
+                $"{z2.Para} jest parą {z2}"
+                );
+        }
+        static void ĆwiczenieDziedziczenie()
+        {
+            Istota istota = new Istota()
+            {
+                Imię = "Filemon",
+                Gatunek = "kot",
+                Wiek = 2
+            };
+            Osoba2 osoba = new Osoba2(
+                imię: "Jan",
+                nazwisko: "Jabłoński",
+                narodowość: "polska",
+                wiek: 14
+                );
+
+            Console.WriteLine(istota);
+            Console.WriteLine(osoba);
         }
         static void TestDziedziczenia_Zwierzę()
         {
