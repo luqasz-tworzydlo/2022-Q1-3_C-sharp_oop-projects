@@ -441,36 +441,51 @@ namespace oop_osoba
         }
         static void TestDziedziczenia_Zwierzę()
         {
-            Zwierzę
+            /*Zwierzę
                 z = new Zwierzę()
                 {
                     Gatunek = "koń",
                     Imię = "Pikuś",
                     Wiek = 6
-                };
-            Pies
+                };*/
+            Zwierzę // tutaj trzeba użyć już argumentów [!!!]
+                z = new Zwierzę(
+                    imię: "Czarnulek",
+                    gatunek: "kot",
+                    wiek: 6
+                );
+
+            /*Pies
                 p = new Pies()
                 {
                     Imię = "Myszka",
                     Wiek = 15,
                     Rasa = "jamnik-kundelek"
-                };
+                };*/
+            Pies // trzeba tutaj już użyć argumentów [!!!]
+                p = new Pies(
+                    imię: "Myszka",
+                    wiek: 15,
+                    rasa: "jamnik-kundelek"
+                );
             Zwierzę z2 = p;
             // p.Gatunek = "kot"; // zmiana gatunku na nową wersję (brak możliwości)
-            z2.Gatunek = "kot"; // tutaj (w klasie zwierzę) można już zmienić gatunek
-
+            // z2.Gatunek = "kot"; // tutaj (w klasie zwierzę) można już zmienić gatunek 
 
             Console.WriteLine("=> Pierwsze zwierzątko");
             Console.WriteLine(
                 $"{p.Rasa} {p.Imię}, {p.Wiek} lat(a)");
+            Console.WriteLine(p);
             Console.WriteLine(
                 $"{p.Gatunek} {p.Rasa} {p.Imię}, {p.Wiek} lat(a)");
             Console.WriteLine(
                 $"{z2.Gatunek} {z2.Imię}, {z2.Wiek} lat(a)"); // niedozwolone użycie {z2.Rasa}
+            Console.WriteLine(z2);
 
             Console.WriteLine("=> Drugie zwierzątko:");
             Console.WriteLine(
                 $"{z.Gatunek} {z.Imię}, {z.Wiek} lat(a)");
+            Console.WriteLine(z);
         }
         static void Test_Wektora_Ogólnego()
         {
