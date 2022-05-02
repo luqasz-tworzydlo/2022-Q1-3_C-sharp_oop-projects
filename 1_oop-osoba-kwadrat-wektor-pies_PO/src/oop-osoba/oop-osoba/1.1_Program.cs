@@ -455,18 +455,15 @@ namespace oop_osoba
             // => static void TestReferencje()
 
             //////////////////////////////////////////////////////////////////////
-            Console.WriteLine("\n(18) Dziedziczenie (zwierzątka i ludzie) => operacje z użyciem czterech klas\n");
+            Console.WriteLine("\n(18) Dziedziczenie (zwierzątka i ludzie) => operacje z użyciem dwóch klas\n");
 
-
+            TestReferencje2();
 
             // program posiada odniesienie do następujących klas:
-            // => klasy Pies z dziedziczeniem klasy Zwierzę [ class Pies : Zwierzę ]
-            // => klasy Zwierzę [ class Zwierzę ]
-            // => klasy Istota [ class Istota ]
-            // => klasy Osoba2 z dziedziczeniem klasy Istota [ class Osoba2 : Istota ]
-            // jak i również do poniższych funkcji:
-            // => static void ĆwiczenieDziedziczenie()
-            // => static void TestReferencje()
+            // => klasy Pupil [ class Pupil ]
+            // => klasy Opiekun z dziedziczeniem instrukcji COpiekun z klasy Pupil [ class Opiekun : Pupil.COpiekun ]
+            // jak i również do poniższej funkcji:
+            // => static void TestReferencje2()
 
             //////////////////////////////////////////////////////////////////////
             Console.ReadKey();
@@ -474,8 +471,9 @@ namespace oop_osoba
         static void TestReferencje2()
         {
             Pupil p = new Pupil() { Imię = "Reks" };
-            Pupil.COpiekun o = new Pupil.COpiekun() { Imię = "Janek" };
+            Opiekun o = new Opiekun() { Imię = "Janek" };
             p.Opiekun = o;
+            //p.opiekun = null;
 
             Console.WriteLine(
                 $"{p.Opiekun.Imię} jest opiekunem {p.Imię}"

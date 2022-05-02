@@ -51,14 +51,14 @@
     <Compile Include="4.1_Pies.cs" />
     <Compile Include="4.3_Istota.cs" />
     <Compile Include="4.4_Osoba2.cs" />
-    <Compile Include="Opiekun.cs" />
+    <Compile Include="4.6_Opiekun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="3.2_Punkt_Wielowymiarowy.cs" />
     <Compile Include="3.1_Wektor_Dwuwymiarowy.cs" />
     <Compile Include="3.3_Wektor_Stereo.cs" />
     <Compile Include="3.4_Wektor_Ogólny.cs" />
     <Compile Include="4.2_Zwierzę.cs" />
-    <Compile Include="Pupil.cs" />
+    <Compile Include="4.5_Pupil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
