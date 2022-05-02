@@ -437,7 +437,6 @@ namespace oop_osoba
             // => static void TestDziedziczenia_Zwierzę()
 
             //////////////////////////////////////////////////////////////////////
-            Console.WriteLine("\n//////////////////////////////////////////////////////////////////////");
             Console.WriteLine("\n(17) Dziedziczenie (zwierzątka i ludzie) => operacje z użyciem czterech klas\n");
 
             ĆwiczenieDziedziczenie();
@@ -449,20 +448,53 @@ namespace oop_osoba
             // program posiada odniesienie do następujących klas:
             // => klasy Pies z dziedziczeniem klasy Zwierzę [ class Pies : Zwierzę ]
             // => klasy Zwierzę [ class Zwierzę ]
-            // jak i również do poniższej funkcji:
-            // => static void TestDziedziczenia_Zwierzę()
+            // => klasy Istota [ class Istota ]
+            // => klasy Osoba2 z dziedziczeniem klasy Istota [ class Osoba2 : Istota ]
+            // jak i również do poniższych funkcji:
+            // => static void ĆwiczenieDziedziczenie()
+            // => static void TestReferencje()
+
+            //////////////////////////////////////////////////////////////////////
+            Console.WriteLine("\n(18) Dziedziczenie (zwierzątka i ludzie) => operacje z użyciem czterech klas\n");
+
+
+
+            // program posiada odniesienie do następujących klas:
+            // => klasy Pies z dziedziczeniem klasy Zwierzę [ class Pies : Zwierzę ]
+            // => klasy Zwierzę [ class Zwierzę ]
+            // => klasy Istota [ class Istota ]
+            // => klasy Osoba2 z dziedziczeniem klasy Istota [ class Osoba2 : Istota ]
+            // jak i również do poniższych funkcji:
+            // => static void ĆwiczenieDziedziczenie()
+            // => static void TestReferencje()
 
             //////////////////////////////////////////////////////////////////////
             Console.ReadKey();
+        }
+        static void TestReferencje2()
+        {
+            Pupil p = new Pupil() { Imię = "Reks" };
+            Pupil.COpiekun o = new Pupil.COpiekun() { Imię = "Janek" };
+            p.Opiekun = o;
+
+            Console.WriteLine(
+                $"{p.Opiekun.Imię} jest opiekunem {p.Imię}"
+                );
+            Console.WriteLine(
+                $"{o.Pupil.Imię} jest pupilem {o.Imię}"
+                );
         }
         static void TestReferencje()
         {
             Zwierzę
                 z1 = new Zwierzę("Timon", "surykatka", 17),
-                z2 = new Zwierzę("Pumba", "guziec", 18)
+                z2 = new Zwierzę("Pumba", "guziec", 18),
+                z3 = new Zwierzę("Simba", "lew", 10),
+                z4 = new Zwierzę("Mufasa", "lew", 20)
                 ;
 
             z1.Para = z2;
+            z3.Ojciec = z4;
             // z2.Para = z1;
 
             Console.WriteLine(
@@ -471,6 +503,12 @@ namespace oop_osoba
             Console.WriteLine(
                 $"{z2.Para} jest parą {z2}"
                 );
+            Console.WriteLine(
+                $"{z3.Ojciec} jest ojcem {z3}"
+                );
+            foreach (Zwierzę dziecko in z4.Dzieci)
+                Console.WriteLine(
+                    $"{dziecko} jest dzieckiem {z4}");
         }
         static void ĆwiczenieDziedziczenie()
         {

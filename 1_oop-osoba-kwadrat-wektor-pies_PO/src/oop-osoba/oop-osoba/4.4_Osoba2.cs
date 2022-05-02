@@ -8,6 +8,8 @@ namespace oop_osoba
 {
     class Osoba2 : Istota
     {
+        // dotyczy => klasa Osoba2 (z dziedziczeniem z klasy Istota) [ class Osoba2 : Istota ] jest częścią programu z punktu nr 17 [ class Program ... static void Main ]
+
         public string Nazwisko;
         public string Narodowość;
         public override string Gatunek

@@ -9,6 +9,7 @@ namespace oop_osoba
     class Pies : Zwierzę
     {
         // dotyczy => klasa Pies (z dziedziczeniem z klasy Zwierzę) [ class Pies : Zwierzę ] jest częścią programu z punktu nr 16 [ class Program ... static void Main ]
+        // dotyczy => klasa Pies (z dziedziczeniem z klasy Zwierzę) [ class Pies : Zwierzę ] jest częścią programu z punktu nr 17 [ class Program ... static void Main ]
 
         public string
             Rasa;

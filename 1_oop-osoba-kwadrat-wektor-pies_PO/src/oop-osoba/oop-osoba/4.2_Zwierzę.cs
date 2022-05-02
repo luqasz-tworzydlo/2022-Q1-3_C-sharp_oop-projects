@@ -9,8 +9,14 @@ namespace oop_osoba
     class Zwierzę
     {
         // dotyczy => klasa Zwierzę [ class Zwierzę ] jest częścią programu z punktu nr 16 [ class Program ... static void Main ]
+        // dotyczy => klasa Zwierzę [ class Zwierzę ] jest częścią programu z punktu nr 17 [ class Program ... static void Main ]
 
-        public Zwierzę para;
+        public Zwierzę
+            para,
+            matka,
+            ojciec
+            ;
+        HashSet<Zwierzę> dzieci = new HashSet<Zwierzę>();
         public Zwierzę Para
         {
             get => para;
@@ -23,6 +29,35 @@ namespace oop_osoba
                     para.para = this;  // daje nam referencję zwrotną [2-2]
             }
         }
+        public HashSet<Zwierzę> Dzieci
+        {
+            get => new HashSet<Zwierzę>(dzieci);
+        }
+        public Zwierzę Matka
+        {
+            get => matka;
+            set
+            {
+                if (matka != null)
+                    matka.dzieci.Remove(this);
+                matka = value;
+                if (matka != null)
+                    matka.dzieci.Add(this);
+            }
+        }
+        public Zwierzę Ojciec
+        {
+            get => ojciec;
+            set
+            {
+                if (ojciec != null)
+                    ojciec.dzieci.Remove(this);
+                ojciec = value;
+                if (ojciec != null)
+                    ojciec.dzieci.Add(this);
+            }
+        }
+
 
         public byte Wiek;
         public string
