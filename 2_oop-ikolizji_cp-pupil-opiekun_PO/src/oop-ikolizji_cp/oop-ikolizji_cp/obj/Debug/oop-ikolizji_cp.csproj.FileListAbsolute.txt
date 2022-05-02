@@ -5,10 +5,3 @@ C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Deb
 C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.csproj.CoreCompileInputs.cache
 C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.exe
 C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.pdb
-D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\2_oop-ikolizji_cp-pupil-opiekun_PO\src\2022-04-21\oop-ikolizji_cp\oop-ikolizji_cp\bin\Debug\oop-ikolizji_cp.exe.config
-D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\2_oop-ikolizji_cp-pupil-opiekun_PO\src\2022-04-21\oop-ikolizji_cp\oop-ikolizji_cp\bin\Debug\oop-ikolizji_cp.exe
-D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\2_oop-ikolizji_cp-pupil-opiekun_PO\src\2022-04-21\oop-ikolizji_cp\oop-ikolizji_cp\bin\Debug\oop-ikolizji_cp.pdb
-D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\2_oop-ikolizji_cp-pupil-opiekun_PO\src\2022-04-21\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.csproj.AssemblyReference.cache
-D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\2_oop-ikolizji_cp-pupil-opiekun_PO\src\2022-04-21\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.csproj.CoreCompileInputs.cache
-D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\2_oop-ikolizji_cp-pupil-opiekun_PO\src\2022-04-21\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.exe
-D:\Carpe Tonus\GitHub Repositories\2022-Q1-3_C-sharp_oop-projects\2_oop-ikolizji_cp-pupil-opiekun_PO\src\2022-04-21\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.pdb
