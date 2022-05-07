@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp3
 {
@@ -119,32 +120,261 @@ namespace ConsoleApp3
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("\n(1) Informacje o relacji właścicieli z ich zwierzątkiem\n");
+            /*Console.WriteLine("\n(1) Informacje o relacji właścicieli z ich zwierzątkiem\n");
             MojTest1();
 
             Console.WriteLine("\n(2) Informacje o kolizjach figury 1, figury 2 oraz figury 3 [jak i samych ze sobą]\n");
-            MójTest2_kolizja();
+            MójTest2_kolizja();*/
 
             // przeładowania operatorów i null'owanie struktur [i ewentualnie struktury] na ostatnie zajęcaich
             // interfejsach operacjach pomiędzy danymi na kolejnych zajęciach [+ zad 5]
 
-            Console.WriteLine("\n(3) Operaecje na kole, prostokącie oraz trójkątach [obliczanie pola, obwodu oraz średnicy]");
-            MójTest3_Figury();
+            //Console.WriteLine("\n(3) Operaecje na kole, prostokącie oraz trójkątach [obliczanie pola, obwodu oraz średnicy]");
+            //MójTest3_Figury();
+
+            //Test3_5();
+
+            //Test4();
+
+            //Test5();
+
+            //Test6();
+
+            //Test7();
+
+            Test8();
 
             Console.ReadKey();
         }
+        static void Test8()
+        {
+            Zwierzę
+                z1 = new Zwierzę() { Imię = "Iks" },
+                z2 = new Zwierzę() { Imię = "Igrek", Matka = z1 },
+                z3 = new Zwierzę() { Imię = "Zet" }
+                ;
+            z1.dzieci.Add(z3);
+
+            Console.WriteLine(
+                $"{z2} ma matkę {z2.Matka}"
+                );
+            Console.WriteLine(
+                $"{z3} ma matkę {z3.Matka}"
+                );
+            foreach (Zwierzę zwierzę in z1.dzieci.Zbiór)
+                Console.WriteLine(
+                    $"{z1} ma dziecko {zwierzę}"
+                    );
+        }
+        static void Test7()
+        {
+            Spotkanie s = new Spotkanie()
+            {
+                początek = DateTime.Parse("5.05.2022 8:00"),
+                koniec = DateTime.Parse("5.05.2022 11:15")
+            };
+            Console.WriteLine(
+                s.długość
+                );
+        }
+        static void Test6()
+        {
+            // opcja 1
+            /*DateTime
+                d1 = DateTime.Parse("4.05.2022"),
+                d2 = DateTime.Now;
+            TimeSpan
+                s = d2 - d1;
+            Console.WriteLine(s);*/
+            // opcja 2
+            DateTime?
+                d1 = DateTime.Parse("2022.05.04"), // dla daty angielskiej
+                d2 = null;
+            TimeSpan?
+                s
+                ;
+            if (d2 == null)
+                d2 = DateTime.Now;
+
+            s = d2 - d1;
+            Console.WriteLine(s);
+        }
+        static void Test4()
+        {
+            // interfejst IComparable i sortowane: lista i słownik
+            // 1-2
+            /*SortedDictionary<int, Opiekun> słownik = new SortedDictionary<int, Opiekun>()
+            {
+                [0] = new Opiekun() { Imię = "Anna", Nazwisko = "Jabłońska" },
+                [1] = new Opiekun() { Imię = "Adam", Nazwisko = "Wiśniewski" },
+                [20] = new Opiekun() { Imię = "Julia", Nazwisko = "Sosnowska" },
+                [3] = new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" },
+                [4] = new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" },
+                [5] = new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" },
+                [6] = new Opiekun() { Imię = "Henryk", Nazwisko = "Topolski" },
+            };*/
+            // 2-2
+            SortedDictionary<Opiekun, int> słownik = new SortedDictionary<Opiekun, int>()
+            {
+                [new Opiekun() { Imię = "Anna", Nazwisko = "Jabłońska" }] = 1,
+                [new Opiekun() { Imię = "Adam", Nazwisko = "Wiśniewski" }] = 2,
+                [new Opiekun() { Imię = "Julia", Nazwisko = "Sosnowska" }] = 3,
+                [new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" }] = 4,
+                [new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" }] = 5,
+                [new Opiekun() { Imię = "Marcin", Nazwisko = "Dąbrowski" }] = 6,
+                [new Opiekun() { Imię = "Zofia", Nazwisko = "Dąbrowska" }] = 7,
+                [new Opiekun() { Imię = "Henryk", Nazwisko = "Topolski" }] = 8,
+            };
+            // 1-2
+            /*foreach(KeyValuePair<int, Opiekun> para in słownik)
+                Console.WriteLine(
+                    $"{para.Key}: {para.Value.Identyfikacja}"
+                    );*/
+            // 2-2
+            // petla foreach powinna byc najczesciej stosowana ze wzgledu na to, ze jest zautomatyzowana i jest najmniejsze ryzyko bledu
+            foreach (KeyValuePair<Opiekun, int> para in słownik)
+                Console.WriteLine(
+                    $"{para.Value}: {para.Key.Identyfikacja}"
+                    );
+            foreach (int wartość in słownik.Values)
+                Console.WriteLine(wartość);
+            foreach (Opiekun klucz in słownik.Keys)
+                Console.WriteLine(
+                    $"{słownik[klucz]}: {klucz}"
+                    );
+        }
+        static void Test5()
+        {
+            // opcja nr 1
+            /*LinkedList<Opiekun> lista = new LinkedList<Opiekun>();
+            {
+
+                lista.AddLast(new Opiekun() { Imię = "Anna", Nazwisko = "Jabłońska" }),
+                lista.AddLast(new Opiekun() { Imię = "Adam", Nazwisko = "Wiśniewski" }),
+                lista.AddLast(new Opiekun() { Imię = "Julia", Nazwisko = "Sosnowska" }),
+                lista.AddLast(new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" }),
+                lista.AddLast(new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" }),
+                lista.AddLast(new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" }),
+                lista.AddLast(new Opiekun() { Imię = "Henryk", Nazwisko = "Topolski" }),
+            };*/
+            // opcja nr 2 
+            /*LinkedList<Opiekun> lista = new LinkedList<Opiekun>();
+            lista.AddLast(new Opiekun()
+                { Imię = "Anna", Nazwisko = "Jabłońska" }
+                );
+            lista.AddLast(new Opiekun()
+                { Imię = "Adam", Nazwisko = "Wiśniewski" }
+                );
+            lista.AddLast(new Opiekun()
+                { Imię = "Julia", Nazwisko = "Sosnowska" }
+                );
+            lista.AddLast(new Opiekun()
+                { Imię = "Maciej", Nazwisko = "Dąbrowski" }
+                );
+            lista.AddLast(new Opiekun()
+                { Imię = "Maciej", Nazwisko = "Dąbrowski" }
+                );
+            lista.AddLast(new Opiekun()
+                { Imię = "Maciej", Nazwisko = "Dąbrowski" }
+                );
+            lista.AddLast(new Opiekun()
+                { Imię = "Henryk", Nazwisko = "Topolski" }
+                );*/
+            // opcja nr 3
+            SortedList<Opiekun, int> lista = new SortedList<Opiekun, int>();
+            lista.Add(new Opiekun()
+            { Imię = "Anna", Nazwisko = "Jabłońska" },
+                0
+                );
+            lista.Add(new Opiekun()
+            { Imię = "Adam", Nazwisko = "Wiśniewski" },
+                1
+                );
+            lista.Add(new Opiekun()
+            { Imię = "Julia", Nazwisko = "Sosnowska" },
+                2
+                );
+            lista.Add(new Opiekun()
+            { Imię = "Maciej", Nazwisko = "Dąbrowski" },
+                3
+                );
+            lista.Add(new Opiekun()
+            { Imię = "Marcin", Nazwisko = "Dąbrowski" },
+                4
+                );
+            /*lista.Add(new Opiekun()
+                { Imię = "Maciej", Nazwisko = "Dąbrowski" },
+                5
+                );*/
+            lista.Add(new Opiekun()
+            { Imię = "Henryk", Nazwisko = "Topolski" },
+                6
+                );
+
+            // opcja nr 2 [i1]
+            /*foreach(Opiekun element in lista)
+            {
+                Console.WriteLine(
+                    element.Identyfikacja);
+            }*/
+            // opcja nr 3
+            foreach (KeyValuePair<Opiekun, int> element in lista)
+            {
+                Console.WriteLine(
+                    $"{element.Value}: {element.Key.Identyfikacja}");
+            }
+        }
+        static void Test3_5()
+        {
+            Console.WriteLine("\n(4) ///");
+            SortedSet<int> zbiórLiczb = new SortedSet<int>() { 12, 3, 4, 10, 5, 11 };
+            SortedSet<string> zbiórNapisów = new SortedSet<string>()
+            { "Adam", "Beata", "Anna", "12", "3", "4", "10", "5", "11" };
+            SortedSet<(double x, double y)> zbiórKrotek = new SortedSet<(double x, double y)>()
+            {
+                (0, 1),
+                (1, 0),
+                (-1, 0),
+                (1, 1),
+                (1, -1),
+                (0.5, 0.5)
+            };
+            SortedSet<Opiekun> zbiórOpiekunów = new SortedSet<Opiekun>()
+            {
+                new Opiekun() { Imię = "Anna", Nazwisko = "Jabłońska" },
+                new Opiekun() { Imię = "Adam", Nazwisko = "Wiśniewski" },
+                new Opiekun() { Imię = "Julia", Nazwisko = "Sosnowska" },
+                new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" },
+                new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" },
+                new Opiekun() { Imię = "Maciej", Nazwisko = "Dąbrowski" },
+                new Opiekun() { Imię = "Henryk", Nazwisko = "Topolski" },
+            };
+
+            foreach (int element in zbiórLiczb)
+                Console.WriteLine(element);
+            Console.WriteLine();
+            foreach (string element in zbiórNapisów)
+                Console.WriteLine(element);
+            Console.WriteLine();
+            foreach ((double x, double y) element in zbiórKrotek)
+                Console.WriteLine(element);
+            Console.WriteLine();
+            foreach (Opiekun element in zbiórOpiekunów)
+                Console.WriteLine(element.Identyfikacja);
+            Console.WriteLine();
+        }
         static void MójTest3_Figury()
         {
-            KołoF
+            Figura
                 k1 = new KołoF(środek: (2, 2), promień: 2);
 
-            ProstokątF
+            Figura
                 p1 = new ProstokątF(bokA: 1, bokB: 2);
 
-            TrójkątF_równoboczny
+            Figura
                 t1_r = new TrójkątF_równoboczny(bokA: 3);
 
-            TrójkątF_prostokątny
+            Figura
                 t1_p = new TrójkątF_prostokątny(bokA: 1, bokB: 2, bokC: 3);
 
             Console.WriteLine("\n" + k1.Właściwości_Figury);

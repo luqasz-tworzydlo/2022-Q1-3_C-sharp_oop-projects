@@ -63,7 +63,9 @@ namespace ConsoleApp3
         }
     }
     // virtual musi mieć zaimplementowaną metodą, zaś abstract deleguje implementację na klasy dziedziczące
-    class Opiekun : CzłonekPary
+    class Opiekun :
+        CzłonekPary,
+        IComparable<Opiekun>
     {
         public override CzłonekPary Para
         {
@@ -93,6 +95,14 @@ namespace ConsoleApp3
         public override string ToString()
         {
             return Imię;
+        }
+        public int CompareTo(Opiekun that)
+        {
+            int wynik;
+            wynik = this.Nazwisko.CompareTo(that.Nazwisko);
+            if (wynik == 0)
+                wynik = this.Imię.CompareTo(that.Imię);
+            return wynik;
         }
     }
 }

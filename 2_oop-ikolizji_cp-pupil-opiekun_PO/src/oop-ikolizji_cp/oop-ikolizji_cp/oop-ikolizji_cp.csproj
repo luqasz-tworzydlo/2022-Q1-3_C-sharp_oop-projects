@@ -48,6 +48,8 @@
     <Compile Include="3_IKolizji.cs" />
     <Compile Include="1_Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="5_Spotkanie.cs" />
+    <Compile Include="6_Zwierzę.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
