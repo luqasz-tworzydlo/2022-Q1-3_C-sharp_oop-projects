@@ -56,13 +56,16 @@ namespace oop_osoba
         // /// /// /// /// !!! PONIŻSZA INSTRUKCJA DO POPRAWY !!! /// /// /// /// //
         ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
         ////////////////////////////////////////////////////////////////////////////
-        /*string waluta_Kwoty = "polska";
         readonly static Dictionary<string, string> DostępneWaluty = new Dictionary<string, string>()
         {
             ["polska"] = "PLN",
             ["europejska"] = "EUR",
             ["dolary_amerykańskie"] = "US"
         };
+        string waluta_Kwoty = "polska";
+        //string waluta_Kwoty = "europejska";
+        //string waluta_Kwoty = "dolary_amerykańskie";
+
         public string Waluta_Kwoty
         {
             get { return waluta_Kwoty; }
@@ -75,7 +78,7 @@ namespace oop_osoba
                     throw new Exception(
                         "Nieznana waluta: " + waluta);
             }
-        }*/
+        }
         ////////////////////////////////////////////////////////////////////////////
         ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
         ////////////////////////////////////////////////////////////////////////////

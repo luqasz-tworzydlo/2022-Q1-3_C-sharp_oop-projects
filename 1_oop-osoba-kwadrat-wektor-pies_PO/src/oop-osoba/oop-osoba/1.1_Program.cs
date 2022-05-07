@@ -71,7 +71,7 @@ namespace oop_osoba
 
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(3.1) Przeniesienia nazwiska z pierwszej osoby dla trzeciej\n");
-            
+
             OsobaB
                 osoba1_3_1 = new OsobaB("Adam", "Mickiewicz"),
                 osoba2_3_1 = new OsobaB("Stefan", "Żeromski"),
@@ -237,7 +237,7 @@ namespace oop_osoba
             //////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(8.3) Różne operacje na zmiennych statycznych\n" +
                 "[wykorzystanie nowej kategorii Kultura i użycie alias'ów]\n");
-             
+
             /*OsobaI
                 osoba8_3_1 = new OsobaI("Adam Mickiewicz")
                 {
@@ -347,21 +347,19 @@ namespace oop_osoba
 
             ////////////////////////////////////////////////////////////////////////////
             ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
-            // /// /// /// !!! PONIŻSZA POZYCJA NR 10 JEST DO POPRAWY !!! /// /// /// //
-            ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
             ////////////////////////////////////////////////////////////////////////////
             Console.WriteLine("\n(10) Operacje na klasie Kwadrat\n" +
                 "[odczyt oraz zapis konkretnych danych]\n");
-            /*Kwadrat
-                k10_1 = new Kwadrat(bok1: 1, 0, 0, 0),
-                k10_2 = new Kwadrat(0, przekątna1: 2, 0, 0),
-                k10_3 = new Kwadrat(0, 0, obwód1: 5, 0),
-                k10_4 = new Kwadrat(0, 0, 0, pole1: 8);
+            Kwadrat
+                k10_1 = new Kwadrat() { Bok = 1 },
+                k10_2 = new Kwadrat() { Przekątna = 2 },
+                k10_3 = new Kwadrat() { Obwód = 5 },
+                k10_4 = new Kwadrat() { Pole = 8 };
 
             TestKwadratu(k10_1);
             TestKwadratu(k10_2);
             TestKwadratu(k10_3);
-            TestKwadratu(k10_4);*/
+            TestKwadratu(k10_4);
 
             // program posiada odniesienie do klasy Kwadrat [ class Kwadrat ]
             // jak i również do poniższej funkcji:
@@ -746,21 +744,19 @@ namespace oop_osoba
         }
         ////////////////////////////////////////////////////////////////////////////
         ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
-        // /// /// /// /// !!! PONIŻSZA INSTRUKCJA DO POPRAWY !!! /// /// /// /// //
-        ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
         ////////////////////////////////////////////////////////////////////////////
-        /*static void TestKwadratu(Kwadrat k)
+        static void TestKwadratu(Kwadrat k)
         {
             Console.WriteLine(
                 "Nasz kwadrat ma bok {0}, w tym:\n" +
                 "=> przekątna: {1}\n" +
-                "=> obwód {2}\n" +
-                "=> pole {3}\n" +
-                k,
+                "=> obwód: {2}\n" +
+                "=> pole: {3}\n",
+                k.Bok,
                 k.Przekątna,
                 k.Obwód,
                 k.Pole);
-        }*/
+        }
         ////////////////////////////////////////////////////////////////////////////
         ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///
         ////////////////////////////////////////////////////////////////////////////
