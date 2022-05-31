@@ -55,7 +55,7 @@ namespace ConsoleApp3
                     Imię = "Szarlik",
                     Gatunek = "pies",
                     Rasa = "jamnik-kundelek",
-                    Para = x
+                    // Para = x
                 };
             // poprawiona klasa CzłonekPary
 
@@ -64,12 +64,12 @@ namespace ConsoleApp3
             Console.WriteLine(
                 $"Natomiast {pupil} ma opiekuna {pupil.Opiekun}.");
 
-            Console.WriteLine(
+            /*Console.WriteLine(
                 $"{x.Identyfikacja} jest sparowany z {x.Para.Identyfikacja}."
                 );
             Console.WriteLine(
                 $"Z kolei {y.Identyfikacja} jest sparowany z {y.Para.Identyfikacja}."
-                );
+                );*/
             // pomocniczy dodatek [2-2]
         }
         static void MójTest2_kolizja()
@@ -142,9 +142,202 @@ namespace ConsoleApp3
 
             //Test7();
 
-            Test8();
+            //Test8();
+
+            // Test9();
+
+            //Test10();
+
+            //Test11();
+
+            //Test12();
+
+            //Test13();
+
+            //Test14();
+
+            Test15();
 
             Console.ReadKey();
+        }
+        static void Test10()
+        {
+            // IEnumerable<> i Dictionary<>.Contains
+            Dictionary<int, Wektor_Dwuwymiarowy> słownik = new Dictionary<int, Wektor_Dwuwymiarowy>()
+            {
+                [0] = new Wektor_Dwuwymiarowy() { X = -1, Y = 1 },
+                [1] = new Wektor_Dwuwymiarowy() { X = 1, Y = -1 },
+                [2] = new Wektor_Dwuwymiarowy() { X = 1, Y = 1 },
+                [3] = new Wektor_Dwuwymiarowy() { X = -1, Y = -1 },
+                [4] = new Wektor_Dwuwymiarowy() { X = 0, Y = 0 }
+            };
+
+            Console.WriteLine(
+                $"Czy słownik zawiera v (0,1)? " +
+                $"{słownik.ContainsValue(new Wektor_Dwuwymiarowy() { X = 0, Y = 1 })}"
+                );
+            Console.WriteLine(
+                $"Czy słownik zawiera v (1,0)? " +
+                $"{słownik.ContainsValue(new Wektor_Dwuwymiarowy() { X = 1, Y = 0 })}"
+                );
+            Console.WriteLine(
+                $"Czy słownik zawiera v (0,0)? " +
+                $"{słownik.ContainsValue(new Wektor_Dwuwymiarowy() { X = 0, Y = 0 })}"
+                );
+
+            // Dictionary<T1,T2>.ContainsValue(T2) akceptuje tylko typ zgodny z typem
+            // wartości, a nie dowolny typ TX dla którego zdefiniowaliśmy,
+            // że TW : IEquatable<TX>
+            /*Console.WriteLine(
+                $"Czy słownik zawiera v (0,0)? " +
+                $"{słownik.ContainsValue((0,0))}"
+                );*/
+        }
+        static void Test11()
+        {
+            // IEnumerable<> i Dictionary<>.Contains
+            Dictionary<int, Wektor_Dwuwymiarowy> słownik = new Dictionary<int, Wektor_Dwuwymiarowy>()
+            {
+                [0] = new Wektor_Dwuwymiarowy() { X = -1, Y = 1 },
+                [1] = new Wektor_Dwuwymiarowy() { X = 1, Y = -1 },
+                [2] = new Wektor_Dwuwymiarowy() { X = 1, Y = 1 },
+                [3] = new Wektor_Dwuwymiarowy() { X = -1, Y = -1 },
+                [4] = new Wektor_Dwuwymiarowy() { X = 0, Y = 0 }
+            };
+
+            Console.WriteLine(
+                $"Czy słownik[4] == (0,0)?" +
+                $" {słownik[4] == new Wektor_Dwuwymiarowy() { X = 0, Y = 0 }}"
+                );
+        }
+        static void Test12()
+        {
+            // zbiór jest sortowany pod kątem kluczy
+            HashSet<Wektor_Dwuwymiarowy> zbiór = new HashSet<Wektor_Dwuwymiarowy>()
+            {
+                new Wektor_Dwuwymiarowy() { X = -1, Y = 1 },
+                new Wektor_Dwuwymiarowy() { X = 1, Y = -1 },
+                new Wektor_Dwuwymiarowy() { X = 1, Y = 1 },
+                new Wektor_Dwuwymiarowy() { X = -1, Y = -1 },
+                new Wektor_Dwuwymiarowy() { X = 0, Y = 0 }
+            };
+
+            Console.WriteLine(
+                $"Czy zbiór zawiera v = (1,0)?" +
+                $" {zbiór.Contains(new Wektor_Dwuwymiarowy() { X = 1, Y = 0 })}"
+                );
+            Console.WriteLine(
+                $"Czy zbiór zawiera v = (0,0)?" +
+                $" {zbiór.Contains(new Wektor_Dwuwymiarowy() { X = 0, Y = 0 })}"
+                );
+        }
+        static void Test13()
+        {
+            // sortowan zbiór
+            SortedSet<Wektor_Dwuwymiarowy> zbiór = new SortedSet<Wektor_Dwuwymiarowy>()
+            {
+                new Wektor_Dwuwymiarowy() { X = -1, Y = 1 },
+                new Wektor_Dwuwymiarowy() { X = 1, Y = -1 },
+                new Wektor_Dwuwymiarowy() { X = 1, Y = 1 },
+                new Wektor_Dwuwymiarowy() { X = -1, Y = -1 },
+                new Wektor_Dwuwymiarowy() { X = 0, Y = 0 }
+            };
+            // Sortowanie WYMAGA implementacji IEquatable<> lub osobno przekazanej
+            // metody sortowania
+            // IEquatable nie daje z automatu operatorów porównania <, >, <=, >=
+            foreach (Wektor_Dwuwymiarowy wektor in zbiór)
+                Console.WriteLine(wektor);
+        }
+        static void Test14()
+        {
+            //CzłonekPary członekPary = new CzłonekPary();
+            CzłonekPary członekPary = new KońTrojański();
+            Opiekun opiekun = new Opiekun()
+            {
+                Imię = "Janek",
+                Nazwisko = "Nowak",
+                // Para = (Pupil)członekPary
+                // Para = członekPary
+            };
+            //członekPary.Para = opiekun;
+
+            /*Console.WriteLine(
+                opiekun.Pupil
+                );*/
+        }
+        static void Test15()
+        {
+            Opiekun
+                o1 = new Opiekun() { Imię = "Janek" },
+                o2 = new Opiekun() { Imię = "Anka" }
+                ;
+            Pupil
+                ps = new Pupil() { Imię = "Szarik", Opiekun = o1 },
+                pn = new Pupil() { Imię = "Reks", Opiekun = o2 }
+                ;
+            Console.WriteLine(
+                $"{o1} ma pupila {o1.Pupil}"
+                );
+            Console.WriteLine(
+                $"{o2} ma pupila {o2.Pupil}"
+                );
+            Console.WriteLine(
+                $"{ps} ma opiekuna {ps.Opiekun}"
+                );
+            Console.WriteLine(
+                $"{pn} ma opiekuna {pn.Opiekun}"
+                );
+
+            Console.WriteLine("Zmieniam");
+
+            Console.WriteLine(
+                $"{o1} ma pupila {o1.Pupil}"
+                );
+            Console.WriteLine(
+                $"{o2} ma pupila {o2.Pupil}"
+                );
+            Console.WriteLine(
+                $"{ps} ma opiekuna {ps.Opiekun}"
+                );
+            Console.WriteLine(
+                $"{pn} ma opiekuna {pn.Opiekun}"
+                );
+        }
+
+
+        static void Test9()
+        {
+            // operatory
+            Wektor_Dwuwymiarowy
+                v = new Wektor_Dwuwymiarowy() { X = 1, Y = -1 },
+                w = new Wektor_Dwuwymiarowy() { X = -10, Y = 10 },
+                s = v + w,
+                v2 = v * 2,
+                v3 = 3 * v,
+                m = -w,
+                r = v - w
+                ;
+            Console.WriteLine(
+                $"v = {v}"
+                );
+            Console.WriteLine(
+                $"w = {w}"
+                );
+            Console.WriteLine(
+                $"v+w = {s}"
+                );
+            Console.WriteLine(
+                $"v*2 = {v2}"
+                );
+            Console.WriteLine(
+                $"3*v = {v3}"
+                );
+            Console.WriteLine(
+                $"-w = {m}"
+                );
+            Console.WriteLine(
+                $"v-w = {r}"
+                );
         }
         static void Test8()
         {

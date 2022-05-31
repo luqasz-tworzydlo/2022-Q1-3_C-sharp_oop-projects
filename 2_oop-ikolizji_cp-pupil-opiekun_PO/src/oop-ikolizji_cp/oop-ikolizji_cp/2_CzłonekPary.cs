@@ -9,7 +9,7 @@ namespace ConsoleApp3
         protected CzłonekPary para; // pole
         // protected pozwala na dostęp klasom dziedziczącym
         // private nie pozwala na dostęp
-        virtual public CzłonekPary Para // właściwość
+        /*virtual *//*public*//* protected CzłonekPary Para // właściwość
         {
             get { return para; }
             set
@@ -20,16 +20,51 @@ namespace ConsoleApp3
                 if (para != null)
                     para.para = this;
             }
+        }*/
+        virtual protected CzłonekPary Para // właściwość
+        {
+            get { return para; }
+            set
+            {
+                if (para != null)
+                    para.para = null;
+                para = value;
+                if (para != null)
+                {
+                    if (para.para != null)
+                        para.para.para = null;
+                    para.para = this;
+                }
+            }
         }
         /*abstract public string Identyfikacja();*/ // nasza metoda
         abstract public string Identyfikacja // nasza właściwość => może to być potrzebne, jeśli oczekujemy, aby ta własność miała dostęp do klasy, która nie jest zdefiniowana
         {
             get;
         }
+        /*virtual public string Identyfikacja // nasza właściwość => może to być potrzebne, jeśli oczekujemy, aby ta własność miała dostęp do klasy, która nie jest zdefiniowana
+        {
+            get;
+        }*/
+    }
+    class KońTrojański : CzłonekPary
+    {
+        public override string Identyfikacja => throw new NotImplementedException();
+        public Armia ArmiaGreków
+        {
+            get => (Armia)Para;
+            set { Para = value; }
+        }
+    }
+    class Armia : CzłonekPary
+    {
+        public override string Identyfikacja => throw new NotImplementedException();
     }
     class Pupil : CzłonekPary
     {
-        public override CzłonekPary Para
+        // tak na prawdę redundantne z Opiekun, jeśli Para jest protected
+        /*public*/
+        protected override CzłonekPary Para
         {
             get => base.Para;
             set
@@ -67,7 +102,8 @@ namespace ConsoleApp3
         CzłonekPary,
         IComparable<Opiekun>
     {
-        public override CzłonekPary Para
+        /*public*/
+        protected override CzłonekPary Para
         {
             get => base.Para;
             set

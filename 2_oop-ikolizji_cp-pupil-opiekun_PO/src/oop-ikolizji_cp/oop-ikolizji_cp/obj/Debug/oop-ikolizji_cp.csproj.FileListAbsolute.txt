@@ -5,3 +5,4 @@ C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Deb
 C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.csproj.CoreCompileInputs.cache
 C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.exe
 C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.pdb
+C:\Users\Łukasz Tworzydło\source\repos\oop-ikolizji_cp\oop-ikolizji_cp\obj\Debug\oop-ikolizji_cp.csproj.SuggestedBindingRedirects.cache
